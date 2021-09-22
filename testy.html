@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fields = ['', '', '', '', '', '', '', '', ''];
+        let charactersLength = characters.length;
+        let result = '';
+
+        function makeid() {
+            for (let i = 0; i < 8; i++) {
+                if (i !== '')
+                result += fields.charAt(Math.floor(Math.random() * charactersLength));
+            }
+            console.log(makeid(5));
+        }
+    </script>
+</body>
+
+</html>

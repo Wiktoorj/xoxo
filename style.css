@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    font-family: sans-serif;
+    background-color: rgb(120, 22, 177);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25vh;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+    padding: 10px;
+    background-color: yellow;
+}
+
+.boardItem {
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+}
+
+.boardItem--x::before,
+.boardItem--x::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 10px;
+    top: 50%;
+    left: 0;
+    background-color: yellow;
+}
+
+.boardItem--x::before {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.boardItem--x::after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.boardItem:hover {
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.boardItem--o::after {
+    position: absolute;
+    content: '';
+    width: 60%;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: 10px solid yellow;
+    border-radius: 50%;
+
+}
+
+.result {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0);
+    display: none;
+    text-align: center;
+}
+
+.show {
+    display: flex;
+}
+
+.bordertop {
+    width: 100%;
+    height: 5px;
+    background-color: yellow;
+    margin-bottom: 10vh;
+}
+
+.borderbot {
+    width: 100%;
+    height: 5px;
+    background-color: yellow;
+    margin-top: 10vh;
+}
+
+p {
+    color: yellow;
+    font-size: 90px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+
+}
+
+button {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: transparent;
+    border: 1px solid yellow;
+    color: yellow;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    letter-spacing: 0px;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 50px;
+}
+
+@media (max-width: 415px) {
+    .wrapper {
+        margin-top: 25vh;
+    }
+
+    p {
+        font-size: 50px;
+    }
+
+    button {
+        padding: 15px;
+        letter-spacing: 5px;
+        font-size: 22px;
+        ;
+    }
+}
+
+@media (max-width: 376px) {
+    .wrapper {
+        margin-top: 25vh;
+    }
+
+    p {
+        font-size: 45px;
+    }
+
+    button {
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 321px) {
+    .wrapper {
+        margin-top: 20vh;
+    }
+
+    .board {
+        display: grid;
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    p {
+        font-size: 35px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
